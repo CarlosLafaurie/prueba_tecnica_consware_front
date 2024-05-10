@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <link rel="stylesheet" href="editar-vehiculo.component.css">
+ <title>Vehiculos</title>
+</head>
+<body>
+
+
+<h2>Editar Vehículo</h2>
+
+<form (ngSubmit)="guardarCambios()">
+  <div>
+    <label>ID:</label>
+    <input type="number" [(ngModel)]="vehiculo.id" name="id" disabled>
+  </div>
+  <div>
+    <label>Marca:</label>
+    <input type="text" [(ngModel)]="vehiculo.marca" name="marca">
+  </div>
+  <div>
+    <label>Modelo:</label>
+    <input type="text" [(ngModel)]="vehiculo.modelo" name="modelo">
+  </div>
+  <div>
+    <label>Año:</label>
+    <input type="number" [(ngModel)]="vehiculo['año']" name="año">
+  </div>
+  <div>
+    <label>Color:</label>
+    <input type="text" [(ngModel)]="vehiculo.color" name="color">
+  </div>
+
+  <button type="submit">Guardar Cambios</button>
+  <button routerLink="/lista">Volver</button>
+</form>
+
+
+
+</body>
+</html>

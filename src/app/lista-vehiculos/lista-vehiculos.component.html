@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="lista-vehiculos.component.css">
+  <title>Vehiculos</title>
+</head>
+<body>
+
+ <div class="container-fluid">
+  <div> <h2>Listado de Vehículos</h2></div>
+
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Marca</th>
+        <th>Modelo</th>
+        <th>Año</th>
+        <th>Color</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let vehiculo of vehiculos">
+        <td>{{ vehiculo.id }}</td>
+        <td>{{ vehiculo.marca }}</td>
+        <td>{{ vehiculo.modelo }}</td>
+        <td>{{ vehiculo['año'] }}</td>
+        <td>{{ vehiculo.color }}</td>
+        <td>
+          <button mat-raised-button color="primary" [routerLink]="['/editar', vehiculo.id]">Editar</button>
+          <button (click)="eliminarVehiculo(vehiculo.id)">Eliminar</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <button mat-raised-button color="primary" [routerLink]="['/agregar']">Agregar</button>
+</div>
+</body>
+</html>

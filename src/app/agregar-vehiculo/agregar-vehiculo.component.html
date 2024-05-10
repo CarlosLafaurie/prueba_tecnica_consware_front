@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="agregar-vehiculo.component.css">
+<title>Vehiculos</title>
+</head>
+<body>
+
+  <div><h2>Agregar Vehículo</h2></div>
+
+  <form (ngSubmit)="agregarVehiculo()">
+    <div>
+      <label>Marca:</label>
+      <input type="text" name="marca" [(ngModel)]="nuevoVehiculo.marca" required>
+    </div>
+    <div>
+      <label>Modelo:</label>
+      <input type="text" name="modelo" [(ngModel)]="nuevoVehiculo.modelo" required>
+    </div>
+    <div>
+      <label>Año:</label>
+      <input type="number" name="año" [(ngModel)]="nuevoVehiculo['año']" required>
+    </div>
+    <div>
+      <label>Color:</label>
+      <input type="text" name="color" [(ngModel)]="nuevoVehiculo.color">
+    </div>
+    <button type="submit">Agregar</button>
+    <button routerLink="/lista">Volver</button>
+  </form>
+
+
+</body>
+</html>
